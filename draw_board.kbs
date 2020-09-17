@@ -1,0 +1,65 @@
+shift = 16777248
+restart:
+cls
+clg
+graphsize 1068, 601
+color clear, orange
+rect 0, 0, graphwidth, graphheight
+imgload graphwidth/2, graphheight/2, 0.7, "planet_2.png"
+color DARKRED
+font "Mistral", 28, 50
+text 1068/2-100+20, 601/2-100+60, "Welcome"
+gosub border
+print "Welcome to Paint Shell !!!"
+gosub border
+pause 2
+clg
+width = 10
+paint:
+clg
+color clear, orange
+rect 0, 0, graphwidth, graphheight
+
+do
+	start:
+	input ":Paint:> " , n
+	if n = "width" then
+		input "Pixels? " , w
+		width = w
+		goto start
+	else
+		if n = "draw" then		
+			gosub cir
+			goto start
+		else
+			if n = "clear" then
+			goto paint
+			else
+				if n = "exit" then
+					end
+				else
+					if n = "restart" then
+						goto restart
+					else
+						print "I cannot understand what you want to say"
+					end if
+				end if
+			end if
+		end if
+	end if
+until n = "exit"
+end
+border:
+print "--------------------------------"
+return
+
+cir:
+while keypressed(shift)
+	color clear, blue
+	circle mousex, mousey, width
+end while
+if keypressed(32) then
+	return
+end if
+gosub cir
+return
