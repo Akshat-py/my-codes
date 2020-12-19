@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./media/calculator/calculator.ico" type="image/icon">
+    <title>Calculator!</title>
+</head>
+<body>
+    <label for="n1">Number 1:</label>
+    <input type="number" id="n1"><br>
+    <br><br>
+    <label for="n2">Number 2:</label>
+    <input type="number" id="n2"><br>
+    <br><br>
+    Result: <button id="bmain"></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button onclick="restart()">Clear!</button>
+    <br><br>
+    <button onclick="sum();">+</button>
+    <button onclick="minus();">-</button>
+    <button onclick="mul();">*</button>
+    <button onclick="div();">/</button>
+    <button onclick="power();">^</button>
+    <script lang="javascript" type="text/javascript">
+        var sum = function() {
+            var n1 = Number(document.getElementById("n1").value);
+            var n2 = Number(document.getElementById("n2").value);
+            document.getElementById("bmain").innerHTML = n1+n2;
+        };
+        var minus = function() {
+            var n1 = Number(document.getElementById("n1").value);
+            var n2 = Number(document.getElementById("n2").value);
+            document.getElementById("bmain").innerHTML = n1-n2;
+        };
+        var mul = function() {
+            var n1 = Number(document.getElementById("n1").value);
+            var n2 = Number(document.getElementById("n2").value);
+            document.getElementById("bmain").innerHTML = n1*n2;
+        };
+        var div = function() {
+            var n1 = Number(document.getElementById("n1").value);
+            var n2 = Number(document.getElementById("n2").value);
+            document.getElementById("bmain").innerHTML = n1/n2;
+        };
+        var power = function() {
+            var n1 = Number(document.getElementById("n1").value);
+            var n2 = Number(document.getElementById("n2").value);
+            document.getElementById("bmain").innerHTML = n1**n2;
+        };
+        var restart = function() {
+            document.getElementById("n1").value = "";
+            document.getElementById("n2").value = "";
+            document.getElementById("bmain").innerHTML = "";
+        }
+    </script>
+</body>
+</html>
