@@ -1,0 +1,13 @@
+telehack.com 23
+username: akshat08
+password: akshat
+
+rainmaker.wunderground.com
+
+freechess.org 5000
+
+1984.ws 23
+
+towel.blinkenlights.nl 23
+
+mtrek.com 1701
